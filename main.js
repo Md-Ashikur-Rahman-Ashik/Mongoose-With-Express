@@ -20,9 +20,9 @@ let con = await mongoose.connect(
 //   res.send("Hello World!");
 // });
 
-app.get("/", (req, res) => {
-  let todo = Todo.findOne({});
-  res.json(todo);
+app.get("/", async (req, res) => {
+  let todo = await Todo.findOne({});
+  res.json({ title: todo.title, desc: todo.desc });
 });
 
 app.listen(port, () => {

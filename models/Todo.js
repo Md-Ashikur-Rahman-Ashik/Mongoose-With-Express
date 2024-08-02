@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const TodoSchema = new mongoose.Schema({
-  title: String,
+  title: { type: String, required: true, default: "As Salamu Alaikum" },
   desc: String,
   isDone: Boolean,
   days: Number,
